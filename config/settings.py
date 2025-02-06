@@ -7,7 +7,7 @@ DEBUG = config("DEBUG", default=True)
 SECRET_KEY = config("SECRET_KEY", default="secret")
 from decouple import config
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost", cast=lambda v: [s.strip() for s in v.split(",")])
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="127.0.0.1", cast=lambda v: [s.strip() for s in v.split(",")])
 
 INSTALLED_APPS = [
     "django.contrib.admin",
