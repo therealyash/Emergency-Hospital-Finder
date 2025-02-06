@@ -1,0 +1,112 @@
+[
+    {
+        "model": "pages.hospital",
+        "pk": 1,
+        "fields": {
+            "name": "Lilavati Hospital",
+            "city": "Mumbai",
+            "pin_code": "400050",
+            "contact_number": "022-26751000",
+            "location_link": "https://goo.gl/maps/Dz4pW"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 2,
+        "fields": {
+            "name": "Kokilaben Dhirubhai Ambani Hospital",
+            "city": "Mumbai",
+            "pin_code": "400053",
+            "contact_number": "022-30666666",
+            "location_link": "https://goo.gl/maps/Fq1dW"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 3,
+        "fields": {
+            "name": "Nanavati Super Speciality Hospital",
+            "city": "Mumbai",
+            "pin_code": "400056",
+            "contact_number": "022-26267500",
+            "location_link": "https://goo.gl/maps/ZvY8J"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 4,
+        "fields": {
+            "name": "Hinduja Hospital",
+            "city": "Mumbai",
+            "pin_code": "400016",
+            "contact_number": "022-24452222",
+            "location_link": "https://goo.gl/maps/JG4XD"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 5,
+        "fields": {
+            "name": "Breach Candy Hospital",
+            "city": "Mumbai",
+            "pin_code": "400026",
+            "contact_number": "022-23667979",
+            "location_link": "https://goo.gl/maps/mPZ6Q"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 6,
+        "fields": {
+            "name": "Saifee Hospital",
+            "city": "Mumbai",
+            "pin_code": "400004",
+            "contact_number": "022-67570111",
+            "location_link": "https://goo.gl/maps/By2MQ"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 7,
+        "fields": {
+            "name": "Tata Memorial Hospital",
+            "city": "Mumbai",
+            "pin_code": "400012",
+            "contact_number": "022-24177000",
+            "location_link": "https://goo.gl/maps/F9sQd"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 8,
+        "fields": {
+            "name": "Jaslok Hospital",
+            "city": "Mumbai",
+            "pin_code": "400026",
+            "contact_number": "022-66573333",
+            "location_link": "https://goo.gl/maps/XfB6M"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 9,
+        "fields": {
+            "name": "S.L. Raheja Hospital",
+            "city": "Mumbai",
+            "pin_code": "400016",
+            "contact_number": "022-66529888",
+            "location_link": "https://goo.gl/maps/Lq7Bq"
+        }
+    },
+    {
+        "model": "pages.hospital",
+        "pk": 10,
+        "fields": {
+            "name": "Bombay Hospital",
+            "city": "Mumbai",
+            "pin_code": "400020",
+            "contact_number": "022-22067676",
+            "location_link": "https://goo.gl/maps/3FxhB"
+        }
+    }
+]

@@ -1,0 +1,160 @@
+{% extends '_base.html' %}
+
+{% block title %}Emergency Hospital Finder{% endblock title %}
+
+{% block content %}
+<style>
+    /* Import Google Material Icons */
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+    /* General Styles */
+    body {
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 40px auto;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        color: #212529;
+    }
+
+    p.text-muted {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    /* Search Bar */
+    .input-group {
+        max-width: 500px;
+        margin: auto;
+        display: flex;
+    }
+
+    .form-control {
+        border-radius: 4px 0 0 4px;
+        flex: 1;
+    }
+
+    .btn-search {
+        border-radius: 0 4px 4px 0;
+        background-color: #f9628b;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-search:hover {
+        background-color: #f9628b;
+    }
+
+    /* Minimap */
+    #map {
+        height: 300px;
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+
+    /* Table */
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f9628b;
+        color: white;
+    }
+
+    .no-results {
+        text-align: center;
+        margin-top: 20px;
+        color: #6c757d;
+    }
+</style>
+
+<div class="container">
+    <h1>Find Nearby Hospitals</h1>
+    <p class="text-muted">Enter your location to find hospitals within 10 km</p>
+
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'pages:hospital_finder' %}" class="d-flex justify-content-center">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Enter location or pincode" 
+                   value="{{ search_query }}" required>
+            <button class="btn btn-search" type="submit">
+                <i class="material-icons">search</i>
+            </button>
+        </div>
+    </form>
+
+    <!-- Minimap -->
+    <div id="map"></div>
+
+    <!-- Hospital List -->
+    {% if hospitals %}
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Hospital Name</th>
+                <th>Pincode</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hospital in hospitals %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ hospital.name }}</td>
+                <td>{{ hospital.pin_code }}</td>
+                <td>{{ hospital.contact_number }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="no-results">No hospitals found within 10 km.</p>
+    {% endif %}
+</div>
+
+<!-- Leaflet.js for OpenStreetMap -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var map = L.map('map').setView([20.5937, 78.9629], 5); // Default to India
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLocation = [position.coords.latitude, position.coords.longitude];
+                map.setView(userLocation, 13);
+                L.marker(userLocation).addTo(map).bindPopup("Your Location").openPopup();
+            });
+        }
+    });
+</script>
+
+{% endblock content %}
