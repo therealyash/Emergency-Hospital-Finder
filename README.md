@@ -2,6 +2,9 @@
 
 Hospital Finder is a Django-based web application that helps users locate nearby hospitals based on their location and search criteria.
 
+![image](https://github.com/user-attachments/assets/06006849-9e9d-4ce8-9991-7c6a3d28a576)
+
+
 ## Prerequisites
 
 Ensure you have the following installed before proceeding:
@@ -57,24 +60,4 @@ The application will be accessible at `http://127.0.0.1:8000/`.
 - User authentication and admin panel access.
 - Google Maps API integration for location-based search.
 
-## Deployment
-
-To deploy the application, consider using services like **Heroku, AWS, or DigitalOcean**. Ensure you:
-
-- Use a production-ready database (PostgreSQL recommended).
-- Configure environment variables.
-- Set `DEBUG=False` in production.
-
-## Contributing
-
-Feel free to fork the repository, create a branch, and submit a pull request with your improvements.
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-### Need Help?
-For any issues, feel free to open an issue on GitHub or reach out to the maintainers.
 
