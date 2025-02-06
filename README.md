@@ -32,12 +32,6 @@ Ensure you have the following installed before proceeding:
 
 4. **Set Up Environment Variables**
    - Create a `.env` file in the root directory.
-   - Add the following variables:
-     ```ini
-     SECRET_KEY=your_secret_key
-     DEBUG=True
-     DATABASE_URL=postgres://user:password@localhost:5432/hospital_db
-     ```
 
 5. **Apply Migrations**
    ```sh
