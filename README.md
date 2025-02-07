@@ -2,8 +2,8 @@
 
 Hospital Finder is a Django-based web application that helps users locate nearby hospitals based on their location and search criteria.
 
-![image](static\images\homepage.png)
-![image](static\images\aboutpage.png)
+![image](static/images/homepage.png)
+![image](static/images/aboutpage.png)
 
 ## Prerequisites
 
